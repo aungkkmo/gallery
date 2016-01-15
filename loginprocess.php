@@ -1,7 +1,9 @@
 <?php
-	
+	require 'confs/dbconfig.php';
+	require 'confs/auth.php';
 	session_start();
 	
+
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 

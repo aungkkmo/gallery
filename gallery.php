@@ -2,7 +2,7 @@
     require 'confs/auth.php';   
     session_start();
 
-  
+    
  ?>
 
 <!DOCTYPE html>
@@ -76,10 +76,10 @@
             <div class="col-lg-12">
                 <h1 class="page-header">SEA Dream Company Gallery</h1>
             </div>
-             
-    <div class="row">            
+         <!-- Upload From -->
+        <div class="row">            
           
-    <form class="navbar-form" action="fileupload.php" method="post" enctype="multipart/form-data">
+                <form class="navbar-form" action="fileupload.php" method="post" enctype="multipart/form-data">
                   <div class="form-group">                  
                         
                                   
@@ -91,24 +91,31 @@
                   </div>                  
              </form>       
         </div> 
-
-         
-            <div class="row">
-              <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/400x300" alt="...">
-                  <div class="caption">                    
-                    <p>Uploaded by blah blahsblhssdg</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
- 
+        <!-- Get Data From DB -->
+        <div class="row"> 
+        <?php 
+                include 'paginate/class.paging.php';       
+                     
+                    $query = "SELECT * FROM phototb";       
+                    $records_per_page=12;
+                    $newquery = $paginate->paging($query,$records_per_page);
+                    $paginate->dataview($newquery);    
+                
+         ?>
+        </div>
         </div>
 
+        <!-- Paginate -->
+        <div class="row paginate">
+            <ul class="pagination">
+  
+            <?php
+                $paginate->paginglink($query,$records_per_page);
+            ?>
+           
+          </ul>
+        </div>  
         <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row">

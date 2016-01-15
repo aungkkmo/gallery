@@ -9,12 +9,10 @@
 	<title>SEA Dream Company</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet" type="text/css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<style>
 		body {
 			font-family: 'Raleway';
@@ -77,7 +75,7 @@
 					<!-- Display Validation Errors -->
 					
 					<!-- New Task Form -->
-					<form action="registerprocess.php" method="POST" class="form-horizontal">
+					<form action="regprocess.php" method="POST" class="form-horizontal">
 						
 
 						<!-- Name -->
@@ -85,7 +83,9 @@
 							<label for="name" class="col-sm-3 control-label">Name</label>
 
 							<div class="col-sm-6">
-								<input type="text" name="name" class="form-control" value="" required>
+								<input type="text" name="name" id="name" class="form-control" required>	
+								<br>					
+								<span id="username_availability_result" class="username_availability_result"></span>
 							</div>
 						</div>
 
@@ -96,7 +96,7 @@
 							<label for="password" class="col-sm-3 control-label">Password</label>
 
 							<div class="col-sm-6">
-								<input type="password" name="password" class="form-control" required>
+								<input type="password" id="password1" name="password" class="form-control" required>
 							</div>
 						</div>
 
@@ -105,14 +105,18 @@
 							<label for="password_confirmation" class="col-sm-3 control-label" >Confirm Password</label>
 
 							<div class="col-sm-6">
-								<input type="password" name="password_confirmation" class="form-control" required>
+								<input type="password" id="password2" name="password_confirmation" class="form-control" required>
+								<br>
+								<span id="confirmMessage" class="confirmMessage"></span>
 							</div>
 						</div>
 
+				
+						
 						<!-- Register Button -->
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-6">
-								<button type="submit" class="btn btn-default">
+								<button type="submit" class="btn btn-default" disabled="disabled">
 									<i class="fa fa-btn fa-sign-in"></i>Register
 								</button>
 							</div>
@@ -122,5 +126,8 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/validate.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>
+ 

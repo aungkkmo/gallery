@@ -15,3 +15,10 @@ body {
 footer {
     margin: 50px 0;
 }
+.thumbnail img{
+	height: 200px;
+	width: 300px;
+}
+.paginate {
+	text-align: center;
+}
