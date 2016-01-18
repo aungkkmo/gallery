@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class paginate
 {
 	private $db;
@@ -21,12 +21,25 @@ class paginate
 				?>
             
               <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
+                <div class="thumbnail img-list">
                   <img src="uploads/<?php echo $row['file_path'] ?>" alt="...">
+                 
                   <div class="caption">                    
-                    <p>Uploaded by <?php echo $row['uploaded_by'] ?></p>
+                    <p id="label">Uploaded by <a href="myphoto.php?username=<?php echo $row['uploaded_by']?>"><?php echo $row['uploaded_by'] ?></a></p>
                     <p><a href="#" class="btn btn-primary glyphicon glyphicon-thumbs-up" role="button" title="Like this photo"></a> 
-                    <a href="download.php?img=<?php echo $row['file_path'] ?>" class="btn btn-danger glyphicon glyphicon-download" role="button" title="Download this photo"></a></p>
+                    <a href="download.php?img=<?php echo $row['file_path'] ?>" class="btn btn-success glyphicon glyphicon-download" role="button" title="Download this photo"></a>
+                     
+                    <?php 
+                    	if($_SESSION['user']==$row['uploaded_by']){
+                    ?>
+                    	<a href="delete.php?img=<?php echo $row['file_path'] ?>" class="btn btn-danger glyphicon glyphicon-download" role="button" title="Delete this photo"></a></p>
+                     
+                    <?php
+                    	}
+
+                     ?>
+
+
                   </div>
                 </div>
               </div>

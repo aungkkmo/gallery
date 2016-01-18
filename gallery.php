@@ -60,7 +60,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="gallery.php">SEA Dream Gallery</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -68,7 +68,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                             <li class=""><a href="#" id="upload_ft" onclick="showDialog()"><i class="glyphicon glyphicon-cloud-upload"></i> Upload Photo </a></li>
-                            <li class=""><a href="myphoto.php?username=<?php echo $_SESSION['user'] ?>"><i class="glyphicon glyphicon-picture"></i> My Photo </a></li>
+                            <li class=""><a href="myphoto.php?username=<?php echo $_SESSION['user'] ?>"><i class="glyphicon glyphicon-picture"></i> My Photo (s) </a></li>
                             <li ><a href="#"><i class="glyphicon glyphicon-user fa fa-btn fa-heart"></i><?php echo " ".$_SESSION['user']; ?></a></li>
                             <li class=""><a href="logout.php"><i class="glyphicon glyphicon-log-out fa fa-btn fa-sign-in"></i> Logout </a></li>
                             

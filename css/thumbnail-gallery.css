@@ -79,4 +79,11 @@ footer {
     clear:both;
     margin:10px 0;
   }
-    
+   
+ /*   .btn {
+      height: 10px;
+    }
+*/
+  .img-list #label{
+    font-size: 11px;
+  }
