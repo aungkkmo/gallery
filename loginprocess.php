@@ -7,11 +7,11 @@
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 
-	// echo "$name $password";
-	$host="localhost";
-	$user="test";
-	$pwd="";
-	$dbname="gallery";
+	 // echo "$name $password";
+	//$host="localhost";
+	//$user="test";
+	//$pwd="";
+	//$dbname="gallery";
 
 
 	// $con=mysql_connect($host,$user,$pwd) or die("Failed" . mysql_error());

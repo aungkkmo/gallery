@@ -24,6 +24,9 @@
     <!-- Custom CSS -->
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/seaalogo.png">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,6 +39,11 @@
             padding-left: 5px;
             font-size: 12px;
         }
+        nav , body {
+            z-index: 0;
+        }
+
+
     </style>
 </head>
 
@@ -52,15 +60,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SEA DREAM GALLERY</a>
+                <a class="navbar-brand" href="#"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                
 
                     <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><i class="glyphicon glyphicon-user fa fa-btn fa-heart"></i><?php echo " ".$_SESSION['user']; ?></a></li>
+                            <li class=""><a href="#" id="upload_ft" onclick="showDialog()"><i class="glyphicon glyphicon-cloud-upload"></i> Upload Photo </a></li>
+                            <li class=""><a href="myphoto.php?username=<?php echo $_SESSION['user'] ?>"><i class="glyphicon glyphicon-picture"></i> My Photo </a></li>
+                            <li ><a href="#"><i class="glyphicon glyphicon-user fa fa-btn fa-heart"></i><?php echo " ".$_SESSION['user']; ?></a></li>
                             <li class=""><a href="logout.php"><i class="glyphicon glyphicon-log-out fa fa-btn fa-sign-in"></i> Logout </a></li>
+                            
                     </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,26 +83,35 @@
     <div class="container">
 
         <div class="row">
-
             <div class="col-lg-12">
                 <h1 class="page-header">SEA Dream Company Gallery</h1>
             </div>
          <!-- Upload From -->
-        <div class="row">            
-          
-                <form class="navbar-form" action="fileupload.php" method="post" enctype="multipart/form-data">
-                  <div class="form-group">                  
-                        
-                                  
-                    <input type="file" name="image">  
-                    <input type="submit" name="submit"class="btn btn-primary" value="Upload">    
-                    <input type="reset" name="reset"class="btn btn-primary" value="Reset">    
-                    
-                                
-                  </div>                  
-             </form>       
-        </div> 
-        <!-- Get Data From DB -->
+              <div id="overlay" onClick="hideDialog()"></div>
+                  <div id="dialog">
+                    <h2>
+                      Upload Photo
+                      <span onClick="hideDialog()">&times;</span>
+                    </h2>
+                    <form action="fileupload.php" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                          <label>Choose an image to upload</label>
+                          <input type="file" name="image" id="imgInp" onchange="loadFile(event);">
+                          <h3>Your Image Will Be Shown Below</h3>
+
+                          <img class="preview" id="preview">
+                        </fieldset>
+                        <fieldset>
+                          <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+                          <input type="reset" name="reset" class="btn btn-danger" id="clear" value="Clear">
+                        </fieldset>
+                    </form>
+                  </div>
+        <!-- End Upload From -->
+        <!-- View Slide Show -->
+
+        <!-- View Slide Show -->
+        <!-- Get Data From DB and Show -->
         <div class="row"> 
         <?php 
                 include 'paginate/class.paging.php';       
@@ -99,7 +119,8 @@
                     $query = "SELECT * FROM phototb";       
                     $records_per_page=12;
                     $newquery = $paginate->paging($query,$records_per_page);
-                    $paginate->dataview($newquery);    
+                    $paginate->dataview($newquery); 
+                    mysql_close();  
                 
          ?>
         </div>
@@ -111,6 +132,7 @@
   
             <?php
                 $paginate->paginglink($query,$records_per_page);
+                mysql_close();
             ?>
            
           </ul>
@@ -133,6 +155,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+ 
 
 </body>
 
