@@ -1,5 +1,4 @@
- 
-$(document).ready(function(){
+ $(document).ready(function(){
       var goodColor = "#66cc66";
       var badColor = "#ff6666"
     $('#password2').keyup(function(){

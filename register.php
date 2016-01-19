@@ -12,7 +12,8 @@
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/fav.png">
-	
+	<script type="text/javascript" src="js/jquery.js"></script>	
+	<script src="js/bootstrap.min.js"></script>
 	<style>
 		body {
 			font-family: 'Raleway';
@@ -28,11 +29,11 @@
 		}
 	</style>
 
-	<script>
-		(function () {
-			$('#task-name').focus();
-		}());
-	</script>
+	// <script>
+	// 	(function () {
+	// 		$('#task-name').focus();
+	// 	}());
+	// </script>
 </head>
 
 <body>
@@ -127,8 +128,8 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/validate.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>	
-	<script src="/js/bootstrap.min.js"></script>
+	
+	
 </body>
 </html>
  

@@ -12,6 +12,8 @@
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/fav.png">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 	
 	<style>
@@ -78,7 +80,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	
 </body>
 </html>
