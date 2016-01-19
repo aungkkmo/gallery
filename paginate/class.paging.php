@@ -26,13 +26,13 @@ class paginate
                  
                   <div class="caption">                    
                     <p id="label">Uploaded by <a href="myphoto.php?username=<?php echo $row['uploaded_by']?>"><?php echo $row['uploaded_by'] ?></a></p>
-                    <p><a href="#" class="btn btn-primary glyphicon glyphicon-thumbs-up" role="button" title="Like this photo"></a> 
-                    <a href="download.php?img=<?php echo $row['file_path'] ?>" class="btn btn-success glyphicon glyphicon-download" role="button" title="Download this photo"></a>
+                    <p><a href="#" class="btn btn-sm btn-primary glyphicon glyphicon-thumbs-up" role="button" title="Like this photo"></a> 
+                    <a href="download.php?img=<?php echo $row['file_path'] ?>" class="btn btn-sm btn-success glyphicon glyphicon-download" role="button" title="Download this photo"></a>
                      
                     <?php 
                     	if($_SESSION['user']==$row['uploaded_by']){
                     ?>
-                    	<a href="delete.php?img=<?php echo $row['file_path'] ?>" class="btn btn-danger glyphicon glyphicon-download" role="button" title="Delete this photo"></a></p>
+                    	<a href="delete.php?img=<?php echo $row['file_path'] ?>" class="btn btn-sm btn-danger glyphicon glyphicon-trash" role="button" title="Delete this photo"></a></p>
                      
                     <?php
                     	}

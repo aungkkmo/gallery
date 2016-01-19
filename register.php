@@ -11,8 +11,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet" type="text/css">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="js/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="img/fav.png">
+	
 	<style>
 		body {
 			font-family: 'Raleway';
@@ -127,7 +127,8 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/validate.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>	
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
  

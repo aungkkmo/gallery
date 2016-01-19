@@ -25,7 +25,7 @@
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/seaalogo.png">
+    <link rel="shortcut icon" href="img/fav.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,7 +116,7 @@
         <?php 
                 include 'paginate/class.paging.php';       
                      
-                    $query = "SELECT * FROM phototb WHERE uploaded_by='$user'";       
+                    $query = "SELECT * FROM phototb WHERE uploaded_by='$user' ORDER BY uploaded_date DESC";       
                     $records_per_page=12;
                     $newquery = $paginate->paging($query,$records_per_page);
                     $paginate->dataview($newquery); 
