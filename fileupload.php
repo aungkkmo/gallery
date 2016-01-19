@@ -5,7 +5,7 @@
 	session_start();
 	
 
-	$username=$_SESSION['user'];
+	$username=mysql_real_escape_string($_SESSION['user']);
 	
 	if(isset($_POST["submit"])) {
 	    $image_name=$_FILES['image']['name'];

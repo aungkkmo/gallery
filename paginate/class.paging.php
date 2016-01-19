@@ -30,9 +30,9 @@ class paginate
                     <a href="download.php?img=<?php echo $row['file_path'] ?>" class="btn btn-sm btn-success glyphicon glyphicon-download" role="button" title="Download this photo"></a>
                      
                     <?php 
-                    	if($_SESSION['user']==$row['uploaded_by']){
+                    	if($_SESSION['user']==$row['uploaded_by'] || $_SESSION['user']=="admin"){
                     ?>
-                    	<a href="delete.php?img=<?php echo $row['file_path'] ?>" class="btn btn-sm btn-danger glyphicon glyphicon-trash" role="button" title="Delete this photo"></a></p>
+                    	<a href="delete.php?img=<?php echo $row['photo_name'] ?>" class="btn btn-sm btn-danger glyphicon glyphicon-trash" role="button" title="Delete this photo"></a></p>
                      
                     <?php
                     	}
